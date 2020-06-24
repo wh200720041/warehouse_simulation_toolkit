@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- warehouse simulation environment -->
+  <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find warehouse_simulation)/models"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find warehouse_simulation)/models"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find warehouse_simulation)/worlds/warehouse.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="gui" value="true"/> 
+  </include>
+
+<!-- add robot  -->  
+  <arg name="x_pos" default="0"/>
+  <arg name="y_pos" default="0"/>
+  <arg name="z_pos" default="0"/>  
+
+  <param name="robot_description" command="$(find xacro)/xacro --inorder $(find warehouse_simulation)/urdf/pioneer3dx.xacro"/>
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model pioneer3dx -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" ns="/pioneer3dx" respawn="false" output="screen">
+    <param name="publish_frequency" value="40.0"/>
+  </node>
+
+<!-- keyboard control -->
+  <node name="key_control" pkg="warehouse_simulation" type="key_control" respawn="false" output="screen"/>
+
+</launch>
