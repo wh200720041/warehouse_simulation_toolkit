@@ -1,0 +1,58 @@
+
+TrajectoryPlannerROS:
+  #Set the acceleration limits of the robot
+  acc_lim_x: 3.0
+  acc_lim_y: 0.0
+  acc_lim_theta: 3.0
+
+  #Set the velocity limits of the robot
+  max_vel_x: 3.0
+  min_vel_x: 0.1
+  max_vel_y: 0
+  max_vel_y: 0
+  max_vel_theta: 3.0
+  min_vel_theta: -3.0
+  min_in_place_vel_theta: 0.1
+
+  #The velocity the robot will command when trying to escape from a stuck situation
+  escape_vel: -0.2
+  
+  #For this example, we'll use a holonomic robot (3 or 4 wheels)
+  holonomic_robot: false
+
+  #Since we're using a holonomic robot, we'll set the set of y velocities it will sample
+
+  #Set the tolerance on achieving a goal
+  xy_goal_tolerance: 0.2
+  yaw_goal_tolerance: 0.12
+
+  #We'll configure how long and with what granularity we'll forward simulate trajectories
+  sim_time: 3.0
+  sim_granularity: 0.025
+  vx_samples: 10
+  vtheta_samples: 20
+
+  #Parameters for scoring trajectories
+  pdist_scale: 0.6
+  gdist_scale: 0.8
+  occdist_scale: 0.01
+  heading_lookahead: 0.325
+  heading_scoring: false
+
+  #We'll use the Dynamic Window Approach to control instead of Trajectory Rollout for this example
+  dwa: false
+
+  #How far the robot must travel before oscillation flags are reset
+  oscillation_reset_dist: 0.05
+
+  #Eat up the plan as the robot moves along it
+  prune_plan: true
+  meter_scoring: false
+
+# Global Planner Parameters
+BaseGlobalPlanner:
+  allow_unknown: false
+  use_dijkstra: true 
+  use_quadratic: true
+  use_grid_path: false
+  old_navfn_behavior: false

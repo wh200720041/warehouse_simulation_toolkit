@@ -250,7 +250,7 @@ void TeleopTurtle::keyLoop()
       case KEYCODE_DOWN:
         ROS_DEBUG("DOWN");
         angular_ = 0.0;
-        linear_ = -0.1;
+        linear_ = -0.0;
         dirty = true;
         break;
       case KEYCODE_Q:
