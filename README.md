@@ -1,4 +1,3 @@
-
 # ROBOTICS EVALUATION TOOLKITS
 A simulation of basic robot localization (SLAM) and navigation in warehouse environment
 
@@ -12,7 +11,8 @@ This package provides a simulation environment of warehouse. A robot is simulate
 <img width="65%" src="/img/warehouse.gif"/>
 </p>
 
-### 1.2. Robot Simulation
+### 1.2. robot tutorial
+The localization and navigation unit is also provided for evaluation. This inlcudes basic 2D slam and robot navigation algorithm.
 <p align='center'>
 <img width="95%" src="/img/warehouse_simulation.gif"/>
 </p>
@@ -26,7 +26,7 @@ ROS Melodic. [ROS Installation](http://wiki.ros.org/ROS/Installation)
 
 ### 2.2. **ROS Package**
 ```
-sudo apt-get install ros-melodic-gazebo-ros
+sudo apt-get install ros-melodic-hector-trajectory-server ros-melodic-slam-gmapping ros-melodic-navigation
 ```
 
 ## 3. Build 
@@ -48,7 +48,14 @@ Note that it takes a few minutes to load model upon first launch
 ### 3.3 Robot Control
 You can use keyboard (arrow keys) to manually control the robot (select cmd window first)
 
+### 3.4 Autonomous Navigation
+You may set target points in RVIZ and the robot will navigate to the location in gazebo.
+1. click 2d nav goal button on rviz
+2. click any points you want on the map
+
 
 ## 4.Acknowledgements
 Thanks for the great work from [GEAR](https://bitbucket.org/osrf/ariac/src/master/).
+
+
 
