@@ -17,6 +17,11 @@ The localization and navigation unit is also provided for evaluation. This inlcu
 <img width="95%" src="/img/warehouse_simulation.gif"/>
 </p>
 
+### 1.3. 3D mapping
+The robot model is equipped with 3D Lidar as an alternative and simulation of 3D mapping is available 
+<p align='center'>
+<img width="95%" src="/img/3d_mapping.gif"/>
+</p>
 
 ## 2. Prerequisites
 ### 2.1 **Ubuntu** and **ROS**
@@ -56,6 +61,5 @@ You may set target points in RVIZ and the robot will navigate to the location in
 
 ## 4.Acknowledgements
 Thanks for the great work from [GEAR](https://bitbucket.org/osrf/ariac/src/master/).
-
 
 
