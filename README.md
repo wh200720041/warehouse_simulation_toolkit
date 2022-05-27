@@ -38,7 +38,7 @@ sudo apt-get install ros-melodic-hector-trajectory-server ros-melodic-slam-gmapp
 ### 3.1 Clone repository:
 ```
     cd ~/catkin_ws/src
-    git clone https://github.com/wh200720041/warehouse_navigation.git
+    git clone https://github.com/wh200720041/warehouse_simulation_toolkit.git
     cd ..
     catkin_make
     source ~/catkin_ws/devel/setup.bash
