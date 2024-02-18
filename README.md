@@ -25,13 +25,13 @@ The robot model is equipped with 3D Lidar as an alternative and simulation of 3D
 
 ## 2. Prerequisites
 ### 2.1 **Ubuntu** and **ROS**
-Ubuntu 64-bit 18.04.
+Ubuntu 64-bit 20.04.
 
-ROS Melodic. [ROS Installation](http://wiki.ros.org/ROS/Installation)
+ROS Noetic. [ROS Installation](http://wiki.ros.org/ROS/Installation)
 
 ### 2.2. **ROS Package**
 ```
-sudo apt-get install ros-melodic-hector-trajectory-server ros-melodic-slam-gmapping ros-melodic-navigation
+sudo apt-get install ros-noetic-hector-trajectory-server ros-noetic-slam-gmapping ros-noetic-navigation
 ```
 
 ## 3. Build 
